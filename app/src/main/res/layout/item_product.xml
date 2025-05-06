@@ -13,12 +13,7 @@
         android:orientation="vertical"
         android:padding="8dp">
 
-        <ImageView
-            android:id="@+id/product_image"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:scaleType="centerCrop"
-            android:src="@android:drawable/ic_menu_gallery" />
+
 
         <TextView
             android:id="@+id/product_name"
@@ -27,7 +22,7 @@
             android:layout_marginTop="8dp"
             android:ellipsize="end"
             android:maxLines="1"
-            android:text="Product Name"
+            android:text="@string/product_name"
             android:textColor="#212121"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -37,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="$99.99"
+            android:text="@string/_99_99"
             android:textColor="#4CAF50"
             android:textSize="14sp"
             android:textStyle="bold" />
@@ -49,7 +44,7 @@
             android:layout_marginTop="4dp"
             android:ellipsize="end"
             android:maxLines="2"
-            android:text="Product description goes here"
+            android:text="@string/product_description_goes_here"
             android:textColor="#757575"
             android:textSize="12sp" />
 
@@ -65,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="#2196F3"
-                android:text="Add to Cart"
+                android:text="@string/add_to_cart"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp" />
 
@@ -75,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="#FFC107"
-                android:text="Edit"
+                android:text="@string/edit"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp"
                 android:visibility="gone" />
@@ -86,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="#F44336"
-                android:text="Delete"
+                android:text="@string/delete"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp"
                 android:visibility="gone" />

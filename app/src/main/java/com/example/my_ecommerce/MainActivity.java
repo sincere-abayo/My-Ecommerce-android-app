@@ -3,6 +3,7 @@ package com.example.my_ecommerce;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -48,7 +49,8 @@ public class MainActivity extends AppCompatActivity {
             ApiService service = ApiClient.getRetrofit().create(ApiService.class);
             service.login(request).enqueue(new Callback<LoginResponse>() {
 
-       // Inside the loginBtn.setOnClickListener method, update the onResponse method:
+
+// Inside the loginBtn.setOnClickListener method, update the onResponse method:
 
 @Override
 public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
@@ -64,14 +66,26 @@ public void onResponse(Call<LoginResponse> call, Response<LoginResponse> respons
             
             // Save user information
             User user = loginResponse.getUser();
-            SharedPreferences.Editor editor = getSharedPreferences("app_prefs", MODE_PRIVATE).edit();
-            editor.putString("user_email", user.getEmail());
-            editor.putString("user_name", user.getName());
-            editor.putInt("user_id", user.getId());
-            editor.putBoolean("is_admin", user.isAdmin());
-            editor.apply();
+            if (user != null) {
+                SharedPreferences.Editor editor = getSharedPreferences("app_prefs", MODE_PRIVATE).edit();
+                editor.putString("user_email", user.getEmail());
+                editor.putString("user_name", user.getName());
+                editor.putInt("user_id", user.getId());
+                editor.putBoolean("is_admin", user.isAdmin());
+                editor.apply();
+            } else {
+                // If user object is null, at least save the email
+                SharedPreferences.Editor editor = getSharedPreferences("app_prefs", MODE_PRIVATE).edit();
+                editor.putString("user_email", email);
+                editor.apply();
+            }
             
-            goToDashboard();
+            // Go to dashboard with a slight delay to ensure preferences are saved
+            new Handler().postDelayed(() -> {
+                Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
+                startActivity(intent);
+                finish(); // Prevent back to login
+            }, 300);
         } else {
             // Login failed with a message from the server
             Toast.makeText(MainActivity.this, loginResponse.getMessage(), Toast.LENGTH_SHORT).show();

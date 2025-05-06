@@ -53,4 +53,20 @@
     <string name="login">Login</string>
     <string name="welcome">Welcome!</string>
     <string name="logout">Logout</string>
+    <string name="no_products_available">No products available</string>
+    <string name="add_product">Add Product</string>
+    <string name="product_name">Product Name</string>
+    <string name="_99_99">$99.99</string>
+    <string name="category_electronics">Category: Electronics</string>
+    <string name="in_stock_10">In Stock: 10</string>
+    <string name="description">Description</string>
+    <string name="product_description_goes_here">Product description goes here</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="save_product">Save Product</string>
+    <string name="quantity">Quantity</string>
+    <string name="category">Category</string>
+    <string name="price">Price</string>
+    <string name="app_version" />
 </resources>

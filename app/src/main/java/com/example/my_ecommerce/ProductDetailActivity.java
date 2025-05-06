@@ -12,6 +12,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import java.util.Objects;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -49,10 +51,10 @@ public class ProductDetailActivity extends AppCompatActivity {
         // Initialize views
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Product Details");
         
-        productImage = findViewById(R.id.product_image);
+
         productName = findViewById(R.id.product_name);
         productPrice = findViewById(R.id.product_price);
         productDescription = findViewById(R.id.product_description);

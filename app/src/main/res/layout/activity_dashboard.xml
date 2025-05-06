@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            android:text="Welcome!"
+            android:text="@string/welcome"
             android:textColor="#333333"
             android:textSize="18sp" />
 
@@ -55,7 +55,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="No products available"
+                    android:text="@string/no_products_available"
                     android:textColor="#757575"
                     android:textSize="16sp"
                     android:visibility="gone" />
@@ -79,7 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        android:contentDescription="Add Product"
+        android:contentDescription="@string/add_product"
         android:src="@android:drawable/ic_input_add" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
